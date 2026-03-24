@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TVPSSKVSR Official Website</title>
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:'Segoe UI',sans-serif;background:#0f172a;color:#fff}
+
+  <!-- Favicon -->
+  <link rel="icon" href="logo.png" type="image/png">
+
+  <!-- HEADER / NAV -->
+  <nav>
+    <div class="logo-container">
+      <img src="logo.png" alt="TVPSSKVSR Logo" class="logo">
+      <span class="site-name">TVPSSKVSR</span>
+    </div>
+    
+/* NAV */
+nav{position:fixed;width:100%;top:0;display:flex;justify-content:space-between;padding:15px 40px;background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);z-index:1000;align-items:center}
+nav a{color:white;text-decoration:none;margin-left:20px}
+nav a:hover{color:#38bdf8}
+
+/* LOGO */
+.logo-container{display:flex;align-items:center;gap:10px}
+.logo{width:40px;height:auto}
+
+/* SECTIONS */
+section{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:80px 20px;text-align:center}
+
+/* PARALLAX BG */
+.hero,#about,#team,#projects{background-attachment:fixed;background-size:cover;background-position:center}
+.hero{background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)),url('bg-hero.jpg')}
+#about{background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),url('bg-about.jpg')}
+#team{background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),url('bg-team.jpg')}
+#projects{background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),url('bg-project.jpg')}
+
+/* FLOATING ICONS HERO */
+.floating-icons{position:absolute;width:100%;height:100%;top:0;left:0;pointer-events:none;overflow:hidden}
+.icon-float{position:absolute;font-size:26px;opacity:0.8;filter:grayscale(1) brightness(2);animation:float 10s linear infinite}
+@keyframes float{0%{transform:translateY(100vh);opacity:0}20%{opacity:0.8}100%{transform:translateY(-10vh);opacity:0}}
+
+/* ORG CHART */
+.org-chart{display:flex;flex-direction:column;align-items:center;gap:40px;margin-top:40px}
+.org-row{display:flex;gap:25px;flex-wrap:wrap;justify-content:center}
+.team-card{width:220px;background:rgba(255,255,255,0.05);backdrop-filter:blur(10px);border-radius:15px;overflow:hidden;transition:0.4s}
+.team-card:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 10px 25px rgba(0,0,0,0.5)}
+.team-card img{width:100%;height:200px;object-fit:cover}
+.team-info{padding:10px}
+.team-info p{color:#94a3b8;font-size:14px}
+.line{width:2px;height:40px;background:#38bdf8}
+
+/* PROJECT */
+.container{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:30px}
+.card{width:260px;background:rgba(255,255,255,0.05);border-radius:15px;overflow:hidden;cursor:pointer;transition:0.4s}
+.card:hover{transform:translateY(-10px) scale(1.05)}
+.card img{width:100%;height:320px;object-fit:cover}
+.card h3{padding:10px}
+
+/* MODAL */
+.modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);display:flex;justify-content:center;align-items:center;opacity:0;visibility:hidden;transition:0.4s;z-index:2000}
+.modal.show{opacity:1;visibility:visible}
+.modal-content{background:#1e293b;padding:20px;border-radius:15px;width:360px;transform:scale(0.8);transition:0.4s}
+.modal.show .modal-content{transform:scale(1)}
+.close{margin-top:10px;color:#38bdf8;cursor:pointer}
+
+/* SLIDER */
+.slider{position:relative;width:100%;height:220px;overflow:hidden;border-radius:10px;margin-bottom:10px}
+.slide{position:absolute;width:100%;height:100%;object-fit:cover;opacity:0;transition:0.5s}
+.slide.active{opacity:1}
+
+/* BUTTONS */
+button{
+  background:#38bdf8;
+  border:none;
+  color:#fff;
+  padding:6px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
+}
+button:hover{
+  background:#0ea5e9;
+}
+
+/* FADE ANIMATION */
+.fade{opacity:0;transform:translateY(40px);transition:1s}
+.fade.show{opacity:1;transform:translateY(0)}
+
+/* FOOTER */
+footer{text-align:center;padding:20px;background:#020617}
+
+/* FLOATING SOCIAL MEDIA ICONS */
+.floating-socials{position:fixed;top:40%;left:10px;display:flex;flex-direction:column;gap:15px;z-index:1500}
+.floating-socials a{
+  background:rgba(255,255,255,0.1);
+  color:#fff;
+  text-decoration:none;
+  width:50px;
+  height:50px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:50%;
+  transition:0.3s;
+  overflow:hidden;
+}
+.floating-socials a:hover{
+  transform:scale(1.2);
+  background:rgba(255,255,255,0.3);
+}
+.floating-socials a img{
+  width:30px;
+  height:30px;
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo-container">
+    <img src="logo.png" alt="Logo TVPSS" class="logo">
+    <span class="logo-text">TVPSS KOLEJ VOKASIONAL SLIM RIVER, PERAK</span>
+  </div>
+  
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#team">Team</a>
+    <a href="#projects">Documentation Report</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero fade">
+  <div class="floating-icons">
+    <div class="icon-float" style="left:10%">📷</div>
+    <div class="icon-float" style="left:30%;animation-delay:2s">🎤</div>
+    <div class="icon-float" style="left:50%;animation-delay:4s">📱</div>
+    <div class="icon-float" style="left:70%;animation-delay:1s">🎬</div>
+    <div class="icon-float" style="left:85%;animation-delay:3s">💻</div>
+  </div>
+  <h1>TVPSSKVSR Portfolio</h1>
+  <p>Next Level Creative Team</p>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+<video controls muted>
+  <source src="video.mp4" type="video/mp4">
+</video>
+    
+
+  <div class="about-content">
+    <h2>ABOUT US</h2>
+    <p>
+      TVPSSKVSR – Tempat kreativiti bertemu teknologi! 
+      Kami merakam, mengolah, dan berkongsi cerita yang menarik, unik,
+      dan memberi inspirasi.
+    </p>
+  </div>
+
+</section>
+
+<!-- TEAM -->
+<section id="team" class="fade">
+  <h2>ORGANIZATION CHART</h2>
+  <div class="org-chart">
+    <div class="team-card">
+      <img src="guru.jpg">
+      <div class="team-info"><h3>Nama Guru</h3><p>Guru Penasihat</p></div>
+    </div>
+    <div class="line"></div>
+    <div class="team-card">
+      <img src="gambar.jpg/ketua.jpg">
+      <div class="team-info"><h3>MUHAMMAD IRFAN DANIEL BIN MOHD ISA</h3><p>Editor TVPSS</p></div>
+    </div>
+    <div class="line"></div>
+    <div class="org-row">
+      <div class="team-card"><img src="gambar.jpg/m1.jpg"><div class="team-info"><h3>AQIL FIQRI BIN FAIZAL</h3><p>Reporter</p></div></div>
+      <div class="team-card"><img src="gambar.jpg/m2.jpg"><div class="team-info"><h3>NUR AQILAH BINTI ABDUL RAZMI</h3><p>Photographer</p></div></div>
+      <div class="team-card"><img src="gambar.jpg/m3.jpg"><div class="team-info"><h3>NUR IRDINA ZAHIRAH BINTI MOHD FARIZ</h3><p>Reporter</p></div></div>
+      <div class="team-card"><img src="gambar.jpg/m4.jpg"><div class="team-info"><h3>NUR ARIANNA DANIA BINTI AHMAD KHAIRI</h3><p>Photographer</p></div></div>
+      <div class="team-card"><img src="gambar.jpg/m5.jpg"><div class="team-info"><h3>NURQASEH BATRISYA BINTI ARDHI</h3><p>Reporter</p></div></div>
+      <div class="team-card"><img src="gambar.jpg/m6.jpg"><div class="team-info"><h3>MUHAMMAD SUFYAN BIN MUHAMMAD SYAHRAN</h3><p>Editor</p></div></div>
+      <div class="team-card"><img src="gambar.jpg/m7.jpg"><div class="team-info"><h3>BAKHTIAR HAKIMULLAH BIN BAKHTIAR SAMSUL KAMAL ARIFIN</h3><p>Reporter</p></div></div>
+      <div class="team-card"><img src="gambar.jpg/m8.jpg"><div class="team-info"><h3>MUHAMMAD HAZIQ BIN MOHAMED NOR KHAIRI</h3><p>Photographer</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="fade">
+  <h2>DOCUMENTATION REPORT</h2>
+  <div class="container">
+    <div class="card" onclick="openProject(['p1.jpg','p2.jpg','p3.jpg','p4.jpg','p5.jpg'],'HARI PENDAFTARAN PELAJAR BAHARU KOHORT 2026','Hari Pendaftaran Pelajar Baharu merupakan satu program yang diadakan bagi menyambut dan mendaftarkan pelajar baharu ke Kolej Vokasional ini. Program ini berjalan dengan lancar dan mendapat sambutan yang baik.','https://vt.tiktok.com/ZSuWM2VyP/')">
+      <img src="gambar.jpg/p1.jpg"><h3>HARI PENDAFTARAN PELAJAR BAHARU</h3>
+    </div>
+    <div class="card" onclick="openProject(['k1.jpg','k2.jpg','k3.jpg','k4.jpg','k5.jpg'],'ORIENTASI PELAJAR BAHARU','Hari Orientasi Pelajar Baharu merupakan program yang diadakan bagi membantu pelajar baharu menyesuaikan diri dengan persekitaran institusi. Program ini menyediakan informasi penting tentang kurikulum, kemudahan kampus, aktiviti ko-kurikulum, serta garis panduan institusi untuk memastikan pelajar dapat memulakan pengajian dengan lancar.','https://vt.tiktok.com/ZSuWMymRW/')">
+      <img src="gambar.jpg/k1.jpg"><h3>ORIENTASI PELAJAR BAHARU</h3>
+    </div>
+      <div class="card" onclick="openProject(['n1.jpg','n2.jpg','n3.jpg','n4.jpg','n5.jpg'],'KVSR FUN RUN 2026','KVSR Fun Run merupakan satu program riadah yang dianjurkan untuk memupuk kesedaran tentang kepentingan gaya hidup aktif serta menggalakkan interaksi positif antara pelajar dan kakitangan. Aktiviti ini turut menyediakan platform untuk warga kampus bersosial sambil mengekalkan kesihatan fizikal.','https://vt.tiktok.com/ZSuWrrgEV/')">
+      <img src="gambar.jpg/n1.jpg"><h3>KVSR FUN RUN 2026</h3>
+    </div>
+      <div class="card" onclick="openProject(['l1.jpg','l2.jpg','l3.jpg','l4.jpg','l5.jpg'],'MAJLIS PELUNCURAN PROGRAM IHYA RAMADAN 1447H','Majlis Peluncuran Program Ihya Ramadan merupakan satu acara rasmi yang dianjurkan untuk memperkenalkan pelbagai program dan aktiviti keagamaan sepanjang bulan Ramadan. Majlis ini bertujuan untuk memberikan pendedahan awal kepada peserta serta membina kesedaran tentang kepentingan nilai-nilai murni dalam masyarakat.','https://vt.tiktok.com/ZSuWrXjAB/')">
+      <img src="gambar.jpg/l1.jpg"><h3>MAJLIS PELUNCURAN PROGRAM IHYA' RAMADAN 1447H</h3>
+    </div>
+    <div class="card" onclick="openProject(['z1.jpg','z2.jpg','z3.jpg','z4.jpg','z5.jpg'],'TERJAH RAMADAN','Terjah Ramadan merupakan program komuniti yang dijalankan bagi membantu golongan memerlukan serta meningkatkan kesedaran sosial dalam kalangan pelajar. Program ini menyediakan peluang kepada peserta untuk terlibat secara langsung dalam aktiviti kebajikan dan amal sepanjang bulan Ramadan.','https://vt.tiktok.com/ZSuWrBeTv/')">
+      <img src="gambar.jpg/z1.jpg"><h3>TERJAH RAMADAN</h3>
+    </div>
+    <div class="card" onclick="openProject(['x1.jpg','x2.jpg','x3.jpg','x4.jpg','x5.jpg'],'MAJLIS KHATAM AL-QURAN 1447H','Majlis Khatam Al-Quran merupakan acara rasmi yang dianjurkan untuk mengiktiraf pencapaian pelajar yang berjaya menamatkan bacaan Al-Quran. Majlis ini bertujuan untuk menyemai nilai-nilai keagamaan, memupuk semangat kerohanian, dan menggalakkan amalan membaca Al-Quran dalam kalangan pelajar.','https://vt.tiktok.com/ZSuWh8c6v/')">
+      <img src="gambar.jpg/x1.jpg"><h3>MAJLIS KHATAM AL-QURAN 1447H</h3>
+    </div>
+     <div class="card" onclick="openProject(['r1.jpg','r2.jpg','r3.jpg','r4.jpg','r5.jpg'],COMING SOON)">
+      <img src="gambar.jpg/r1.jpg"><h3>COMING SOON</h3>
+    </div>
+     <div class="card" onclick="openProject(['q1.jpg','q2.jpg','q3.jpg','q4.jpg','q5.jpg'],COMING SOON)">
+      <img src="gambar.jpg/q1.jpg"><h3>COMING SOON</h3>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal" id="projectModal">
+  <div class="modal-content">
+    <div class="slider" id="slider"></div>
+    <div style="display:flex;justify-content:space-between;margin-bottom:10px;">
+      <button id="prevBtn">Prev</button>
+      <button id="nextBtn">Next</button>
+    </div>
+    <h2 id="title"></h2>
+    <p id="date"></p>
+    <p id="desc"></p>
+    <div class="close" onclick="closeProject()">Close</div>
+  </div>
+</div>
+
+<!-- FLOATING SOCIAL MEDIA ICONS -->
+<div class="floating-socials">
+  <a href="https://www.tiktok.com/@tvpsskvsr2024" target="_blank">
+    <img src="tiktok-logo.png" alt="TikTok">
+  </a>
+  <a href="https://www.instagram.com/tvpsskvsr?igsh=MXlyMjdyenljYTlmdA==" target="_blank">
+    <img src="instagram-logo.png" alt="Instagram">
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 TVPSS KOLEJ VOKASIONAL SLIM RIVER, PERAK</p>
+</footer>
+
+<script>
+// FADE IN ON SCROLL
+const faders=document.querySelectorAll('.fade');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add('show')
+  })
+},{threshold:0.3});
+faders.forEach(el=>observer.observe(el));
+
+// MANUAL SLIDER
+let slideIndex = 0;
+let slides = [];
+
+function openProject(images,title,date,desc){
+  const modal = document.getElementById('projectModal');
+  modal.classList.add('show');
+
+  const slider = document.getElementById('slider');
+  slider.innerHTML = '';
+  slides = [];
+
+  images.forEach((img,i)=>{
+    let image = document.createElement('img');
+    image.src = img;
+    image.classList.add('slide');
+    if(i===0) image.classList.add('active');
+    slider.appendChild(image);
+    slides.push(image);
+  });
+
+  slideIndex = 0;
+  showSlide(slideIndex);
+
+  document.getElementById('title').innerText = title;
+  document.getElementById('date').innerText = date;
+  document.getElementById('desc').innerText = desc;
+}
+
+function showSlide(index){
+  slides.forEach((slide,i)=>{
+    slide.classList.remove('active');
+    if(i===index) slide.classList.add('active');
+  });
+}
+
+document.getElementById('prevBtn').addEventListener('click',()=>{
+  slideIndex = (slideIndex-1+slides.length)%slides.length;
+  showSlide(slideIndex);
+});
+
+document.getElementById('nextBtn').addEventListener('click',()=>{
+  slideIndex = (slideIndex+1)%slides.length;
+  showSlide(slideIndex);
+});
+
+function closeProject(){
+  document.getElementById('projectModal').classList.remove('show');
+}
+</script>
+</body>
+</html>
