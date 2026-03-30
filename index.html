@@ -213,21 +213,21 @@ footer{text-align:center;padding:20px;background:#020617}
     <a href="https://drive.google.com/file/d/abc123/view?usp=sharing" target="_blank">Picture</a>
      </div>
   </div>
-    <div class="card" onclick="openProject(['n1.jpg','n2.jpg','n3.jpg','n4.jpg','n5.jpg'],'KVSR FUN RUN 2026','KVSR Fun Run merupakan satu program riadah yang dianjurkan untuk memupuk kesedaran tentang kepentingan gaya hidup aktif serta menggalakkan interaksi positif antara pelajar dan kakitangan. Aktiviti ini turut menyediakan platform untuk warga kampus bersosial sambil mengekalkan kesihatan fizikal.',')">
+    <div class="card" onclick="openProject(['n1.jpg','n2.jpg','n3.jpg','n4.jpg','n5.jpg'],'KVSR FUN RUN 2026','KVSR Fun Run merupakan satu program riadah yang dianjurkan untuk memupuk kesedaran tentang kepentingan gaya hidup aktif serta menggalakkan interaksi positif antara pelajar dan kakitangan. Aktiviti ini turut menyediakan platform untuk warga kampus bersosial sambil mengekalkan kesihatan fizikal.','')">
       <img src="n1.jpg"><h3>KVSR FUN RUN 2026</h3>
         <div class="media-links">
        <a href="https://vt.tiktok.com/ZSHdL5b9V/" target="_blank">Video</a>
     <a href="https://drive.google.com/file/d/abc123/view?usp=sharing" target="_blank">Picture</a>
      </div>
   </div>
-    <div class="card" onclick="openProject(['l1.jpg','l2.jpg','l3.jpg','l4.jpg','l5.jpg'],'MAJLIS PELUNCURAN PROGRAM IHYA RAMADAN 1447H','Majlis Peluncuran Program Ihya Ramadan merupakan satu acara rasmi yang dianjurkan untuk memperkenalkan pelbagai program dan aktiviti keagamaan sepanjang bulan Ramadan. Majlis ini bertujuan untuk memberikan pendedahan awal kepada peserta serta membina kesedaran tentang kepentingan nilai-nilai murni dalam masyarakat.',')">
+    <div class="card" onclick="openProject(['l1.jpg','l2.jpg','l3.jpg','l4.jpg','l5.jpg'],'MAJLIS PELUNCURAN PROGRAM IHYA RAMADAN 1447H','Majlis Peluncuran Program Ihya Ramadan merupakan satu acara rasmi yang dianjurkan untuk memperkenalkan pelbagai program dan aktiviti keagamaan sepanjang bulan Ramadan. Majlis ini bertujuan untuk memberikan pendedahan awal kepada peserta serta membina kesedaran tentang kepentingan nilai-nilai murni dalam masyarakat.','')">
       <img src="l1.jpg"><h3>MAJLIS PELUNCURAN PROGRAM IHYA' RAMADAN 1447H</h3>
       <div class="card-links">
        <a href="https://vt.tiktok.com/ZSHdLqFbt/" target="_blank">Video</a>
     <a href="https://drive.google.com/file/d/abc123/view?usp=sharing" target="_blank">Picture</a>
      </div>
   </div>
-    <div class="card" onclick="openProject(['z1.jpg','z2.jpg','z3.jpg','z4.jpg','z5.jpg'],'TERJAH RAMADAN','Terjah Ramadan merupakan program komuniti yang dijalankan bagi membantu golongan memerlukan serta meningkatkan kesedaran sosial dalam kalangan pelajar. Program ini menyediakan peluang kepada peserta untuk terlibat secara langsung dalam aktiviti kebajikan dan amal sepanjang bulan Ramadan.',')">
+    <div class="card" onclick="openProject(['z1.jpg','z2.jpg','z3.jpg','z4.jpg','z5.jpg'],'TERJAH RAMADAN','Terjah Ramadan merupakan program komuniti yang dijalankan bagi membantu golongan memerlukan serta meningkatkan kesedaran sosial dalam kalangan pelajar. Program ini menyediakan peluang kepada peserta untuk terlibat secara langsung dalam aktiviti kebajikan dan amal sepanjang bulan Ramadan.','')">
       <img src="z1.jpg"><h3>TERJAH RAMADAN</h3>
         <div class="media-links">
        <a href="https://vt.tiktok.com/ZSHdLbvXA/" target="_blank">Video</a>
@@ -451,16 +451,6 @@ document.getElementById('prevBtn').addEventListener('click',()=>{
 });
 
 document.getElementById('nextBtn').addEventListener('click',()=>{
-  slideIndex = (slideIndex+1)%slides.length;
-  showSlide(slideIndex);
-});
-
-function closeProject(){
-  document.getElementById('projectModal').classList.remove('show');
-}
-</script>
-</body>
-</html>
   slideIndex = (slideIndex+1)%slides.length;
   showSlide(slideIndex);
 });
